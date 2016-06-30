@@ -11,7 +11,7 @@ ByAddressP1Form {
         listModelCitySearchId.append({text:"text4"});
 */
         console.log("Поиск:" + textFieldCityName.text);
-        cppObject.cppMethod(textFieldCityName.text);
+        qml2c.searchGorod(textFieldCityName.text);
 
     }
 }
