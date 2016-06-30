@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include "qml2ctranslator.h"
 #include "listview.h"
+#include "xmlmodule.h"
 #include <QQmlContext>
 
 
@@ -17,6 +18,9 @@ int main(int argc, char *argv[])
     qml2c.setEngine(&engine);
 
     engine.rootContext()->setContextProperty("qml2c", &qml2c);
+
+    // Загрузка XML с данными:
+    xmlModule xml(QString("in.xml"));
 
     return app.exec();
 }
