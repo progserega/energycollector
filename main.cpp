@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
     // Загрузка XML с данными:
-    xmlAsutpData asutpData(QString("in2.xml"));
+    xmlAsutpData asutpData(QString("in.xml"));
 
     qml2Ctranslator qml2c;
     qml2c.setEngine(&engine);
