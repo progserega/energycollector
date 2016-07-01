@@ -9,6 +9,9 @@ class xmlModule : public QObject
 {
     Q_OBJECT
 public:
+    QXmlStreamReader *xml;
+    QFile* file;
+
     explicit xmlModule(QString filename);
     ~xmlModule(void);
 
@@ -18,8 +21,6 @@ signals:
 public slots:
 
 private:
-        QXmlStreamReader *xml;
-        QFile* file;
 };
 
 #endif // XMLMODULE_H

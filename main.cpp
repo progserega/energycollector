@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include "qml2ctranslator.h"
 #include "listview.h"
-#include "xmlmodule.h"
+#include "xmlasutpdata.h"
 #include <QQmlContext>
 
 
@@ -14,13 +14,15 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
 
+    // Загрузка XML с данными:
+    xmlAsutpData asutpData(QString("in2.xml"));
+
     qml2Ctranslator qml2c;
     qml2c.setEngine(&engine);
+    qml2c.setAsutpData(&asutpData);
 
     engine.rootContext()->setContextProperty("qml2c", &qml2c);
 
-    // Загрузка XML с данными:
-    xmlModule xml(QString("in.xml"));
 
     return app.exec();
 }

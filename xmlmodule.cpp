@@ -18,6 +18,7 @@ xmlModule::xmlModule(QString filename)
         return;
     }
     xml = new QXmlStreamReader(file);
+
 }
 
 xmlModule::~xmlModule()

@@ -1,12 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick xmlpatterns
 CONFIG += c++11
 
 SOURCES += main.cpp \
     qml2ctranslator.cpp \
     xmlmodule.cpp \
-    listview.cpp
+    listview.cpp \
+    xmlasutpdata.cpp
 
 RESOURCES += qml.qrc
 
@@ -19,4 +20,5 @@ include(deployment.pri)
 HEADERS += \
     qml2ctranslator.h \
     xmlmodule.h \
-    listview.h
+    listview.h \
+    xmlasutpdata.h
