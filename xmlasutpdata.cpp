@@ -36,17 +36,19 @@ QStringList* xmlAsutpData::getNasPunkts2(void)
 {
     qDebug() << __FUNCTION__ << ":" << __LINE__;
     QStringList *list = new QStringList;
-    //QString q="doc($inputDocument)/root/item[@nas_punkt = \"Партизанск\"]/<p>{string(potrebitel)}</p>";
+    QString q="doc($inputDocument)/root/item[child::nas_punkt = \"Хмельницкое\"]/<p>{string(potrebitel)}</p>";
+
     //QString q="doc($inputDocument)/root/item/<p>{string(nas_punkt)}</p>";
     //QString q="doc($inputDocument)/root/item[xs:integer(@dom) = 18]/<p>{string(potrebitel)}</p>";
-    QString q="doc($inputDocument)/cookbook/recipe[@xml:id = \"MushroomSoup\"]/ingredient[@unit = \"milliliters\"]/<p>{@name, @quantity, @unit}</p>";
-    //QString q="doc($inputDocument)/cookbook/recipe/<p>{string(title)}</p>";
+    //QString q="doc($inputDocument)/cookbook/recipe[@xml:id = \"MushroomSoup\"]/ingredient[@unit = \"milliliters\"]/<p>{@name, @quantity, @unit}</p>";
+   // QString q="doc($inputDocument)/cookbook/recipe/<p>{string(title)}</p>";
+    //QString q="doc($inputDocument)/cookbook/recipe [child::title = \"Quick and Easy Mushroom Soup\"]/<p>{string(title)}</p>";
   //  QString q="(: Select all recipes. :) declare variable $inputDocument external; doc($inputDocument)/cookbook/recipe/<p>{string(title)}</p>";
   //  QString q="doc($inputDocument)/cookbook/recipe/<p>{string(title)}</p>";
 
     QFile sourceDocument;
     //sourceDocument.setFileName(":/files/cookbook.xml");
-    sourceDocument.setFileName("in2.xml");
+    sourceDocument.setFileName("in.xml");
     sourceDocument.open(QIODevice::ReadOnly);
 
     QByteArray outArray;
