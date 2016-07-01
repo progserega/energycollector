@@ -36,7 +36,7 @@ QStringList* xmlAsutpData::getNasPunkts2(void)
 {
     qDebug() << __FUNCTION__ << ":" << __LINE__;
     QStringList *list = new QStringList;
-    QString q="doc($inputDocument)/root/item[child::nas_punkt = \"Хмельницкое\"]/<p>{string(potrebitel)}</p>";
+    QString q="doc($inputDocument)/root/item[contains(child::nas_punkt, \"льн\")]/<p>{string(potrebitel)}</p>";
 
     //QString q="doc($inputDocument)/root/item/<p>{string(nas_punkt)}</p>";
     //QString q="doc($inputDocument)/root/item[xs:integer(@dom) = 18]/<p>{string(potrebitel)}</p>";
@@ -48,7 +48,7 @@ QStringList* xmlAsutpData::getNasPunkts2(void)
 
     QFile sourceDocument;
     //sourceDocument.setFileName(":/files/cookbook.xml");
-    sourceDocument.setFileName("in.xml");
+    sourceDocument.setFileName("in_full.xml");
     sourceDocument.open(QIODevice::ReadOnly);
 
     QByteArray outArray;
