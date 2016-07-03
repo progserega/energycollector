@@ -68,8 +68,8 @@ int main(int argc, char *argv[])
     */
 
 #else
-    data_path=QStandardPaths::writableLocation(QStandardPaths::DataLocation)+"/EnergyCollector";
-    config_path=QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)+"/EnergyCollector";
+    data_path=QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    config_path=QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)+"/energycollector";
     if(!dir.exists(config_path))
     {
         if(!dir.mkpath(config_path))

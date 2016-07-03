@@ -4,8 +4,6 @@
 #include <QObject>
 #include <QXmlStreamReader>
 #include <QFile>
-#include <QBuffer>
-#include <QByteArray>
 #include <QXmlQuery>
 #include <QXmlFormatter>
 
@@ -13,12 +11,9 @@ class xmlModule : public QObject
 {
     Q_OBJECT
 public:
-    QXmlStreamReader *xml;
     QFile* file;
-    QByteArray *outArray;
-    QBuffer *buffer;
-    QXmlQuery *query;
 
+    int xmlQuery(QString xmlQuery, QStringList *result);
     explicit xmlModule(QString filename);
     ~xmlModule(void);
 
