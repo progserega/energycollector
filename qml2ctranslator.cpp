@@ -37,21 +37,13 @@ void qml2Ctranslator::searchGorod(QString text)
     listGorod->clear();
 
     // Берём список городов:
-    QStringList *nasPunkts = asutpData->getNasPunkts2();
-    if (nasPunkts==NULL)
+    if(asutpData->getNasPunkts(listGorod,text)==NULL)
     {
         qDebug() << __FUNCTION__ << ":" << __LINE__ << ": Error! get nasPunkts == NULL";
         return;
     }
-
-    for (int index=0; index<nasPunkts->size();index++)
+    else
     {
-        if (nasPunkts[index].indexOf(text)!=-1)
-        {
-            listGorod->append(nasPunkts[index]);
-        }
+        updateGorodList();
     }
-    updateGorodList();
-
-    delete nasPunkts;
 }

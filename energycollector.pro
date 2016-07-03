@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick xmlpatterns
+QT += qml quick xmlpatterns #androidextras
 CONFIG += c++11
 
 SOURCES += main.cpp \
@@ -22,3 +22,6 @@ HEADERS += \
     xmlmodule.h \
     listview.h \
     xmlasutpdata.h
+
+
+#ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
